@@ -36,11 +36,6 @@ public: // the following functions and variables are public and usable by all
 	virtual void vfunc() { // this is a virtual function, it will be overwritten in the derived class
 		cout << "This is base's vfunc().\n";
 	}
-	// using templates, the data type for this function swapargs can be anything
-	// a template can have two different datatypes
-	// template <class type1, class type2> void myfunc(type1 x, type2 y) for multiple class input
-	template <class X> void swapargs(X& a, X& b);
-	
 
 	// Note:
 	// pure virtual functions are just virtual functions with nothing within the brackets. 
@@ -101,13 +96,6 @@ public: // the following functions and variables are public and usable by all
 	// cannot overload the = (), [] or -> operators
 	// friend operator overloading adds flexibility, can have 100 + obj or obj + 100, if only in class
 	// operator overloading, obj + 100 works, but 100 + obj doesn't
-
-	// define custom functions
-	void neg(int* i); // function that handles reference
-	double dfA(double d = 0.0); // function that has a default parameter
-
-
-
 
 private: // the following functions and variables are private and usable only by the class itself
 	int pvalue; // a value that is private
@@ -239,16 +227,23 @@ namespace NS1 {
 
 
 // define global functions
-void my_Thandler();
+void my_Thandler(); // custom handler to handle termination process during try catch
 int series(void); // you can put void in a bracket for null parameter or put nothing in it
 void sqrval(const int* val);//function to demonstrate const_cast 
+double dfA(double d = 0.0); // function that has a default parameter
+void neg(int* i); // function that handles reference
 
 // define global variables
 char carray[SIZE] = "this is not a full char array";
 char carrayfull[] = "this is a full char array";
-int num = 0;
+int num = 0; // a global int variable
 int* pi = &num; // point the pointer to an int's address
 myclassbase myclass;
+
+// using templates, the data type for this function swapargs can be anything
+// a template can have two different datatypes
+// template <class type1, class type2> void myfunc(type1 x, type2 y) for multiple class input
+template <class X> void swapargs(X& a, X& b);
 
 // define global manimupators 
 istream& getpass(istream& stream);// A simple input manipulator.
@@ -309,11 +304,7 @@ void ShowBasics() {
 
 	//a static local variable is a local variable that retains its value between function calls
 	cout << "[Core05] using a static variable in the function series(), the first call is: " << series() << "\n"; // output 23
-	cout << "using a static variable in the function series(), the second call is: " << series() << end; // output 23
-
-	// Note:
-	// The volatile keyword tells the compiler that a variable's value may be changed in ways
-	// not explicitly specified by the program, ie being used outside of the program
+	cout << "using a static variable in the function series(), the second call is: " << series() << end; // output 46
 
 	//Standard C++ states that register is a "hint to the implementation that 
 	// the object so declared will be heavily used, so stored in cpu instead of memory
@@ -325,7 +316,6 @@ void ShowBasics() {
 
 	// sizeof can show you how large a data type takes in memory
 	cout << "[Core07] the size of double in this operating system is: " << sizeof(double) << end;
-
 
 	/* this code is to get continuous inputs until the user enters an exit command, uncomment to see it in action
 	string command;
@@ -345,34 +335,25 @@ void ShowBasics() {
 	employee_1->wage = 35;
 	cout << "[Core08] employee's wage is: " << employee_1->wage << end;
 
-	swap_byte us1, us2;
-	cout << "[Core09] union shares memory with variables: " << us1.u++ << " the second one changes as well: " << us2.u << end;
+	swap_byte us1; // this is a union
+	cout << "[Core09] union shares memory with variables: " << ++us1.u<<end;
 
 	// traverse the char array and output the contents using a for loop
 	cout << "[Core10] traversing a char array using arr[i] in for loop:" << endl;
-	for (int i = 0; carrayfull[i]; i++)
+	for (int i = 0; carray[i]; i++) // empty space will be neglected
 	{
-		cout << carrayfull[i]; // output a variable
+		cout << carray[i]; // output a variable
 	}
 	cout << end;
 
-	// using a reference function
-	cout << "[Core11] num is originally: " << num;
-	myclass.neg(&num);
-	cout << " but after a pointer function that changes its value, it is now:" << num << end;
-
-	// using a pointer to fire a function
-	int (*fp)() = series; // a pointer to a function
-	cout << "[Core12] using a function pointer to fire the function: " << fp << end;
-
 	// a function can have a default parameter
-	cout << "[Core13] dfa with no input variables is: " << myclass.dfA() << " and with input is: " << myclass.dfA(22.3) << end;
+	cout << "[Core11] dfa with no input variables is: " << dfA() << " and with input is: " << dfA(22.3) << end;
 
 	int si = 10, sj = 20;
 
-	cout << "[Core14] Original i, j: " << si << ' ' << sj << '\n';
+	cout << "[Core12] Original i, j: " << si << ' ' << sj << '\n';
 	// using the swapargs function for different data types
-	myclass.swapargs(si, sj); // swap integers
+	swapargs<int>(si, sj); // swap integers
 	cout << "swapped i, j: " << si << ' ' << sj << end;
 
 
@@ -384,8 +365,8 @@ void ShowBasics() {
 	// from derived to base, and from base to base,
 	// but from base to derived is not okay
 	if (dp) {
-		cout << "[Core15]Cast from Derived * to Derived * OK.\n";
-		dp->dfA();
+		cout << "[Core13]Cast from Derived * to Derived * OK.\n";
+		dp->getPV();
 		cout << end;
 	}
 	else
@@ -394,26 +375,26 @@ void ShowBasics() {
 	cout << endl;
 
 	// use const cast to cast away const and edit const variables
-	cout << "[Core16] num before call: " << num;
+	cout << "[Core14] num before call: " << num;
 	sqrval(&num);
 	cout << "num after call: " << num << end;
 
 	// use static_cast is the same as (double)num
-	cout << "[Core17] static cast int into double: " << static_cast<double> (num) / 3 << end; // static cast a value from one type to another;
+	cout << "[Core15] static cast int into double: " << static_cast<double> (num) / 3 << end; // static cast a value from one type to another;
 
 	// use reinterpret_cast
 	char* stp = carray;
 	num = reinterpret_cast<int> (stp); // cast pointer to integer
-	cout << "[Core18] reinterpret_cast from char* to int: " << num << end;
+	cout << "[Core16] reinterpret_cast from char* to int: " << num << end;
 
 	// using namespace
 	CounterNameSpace::lowerbound = 3; // using an item in a namespace in its full form
-	cout << "[Core19] full namespace usage: " << CounterNameSpace::lowerbound << end;
+	cout << "[Core17] full namespace usage: " << CounterNameSpace::lowerbound << end;
 	using CounterNameSpace::lowerbound; // only lowerbound is visible, if you want to use upperbound, you have to use CounterNameSpace::upperbound
 	lowerbound = 10; // OK because lowerbound is visible
 	using namespace CounterNameSpace; // all members are visible, you can simply use lowerbound and upperbound without adding CounterNameSpace::
 	upperbound = 100; // OK because all members are now visible
-	cout << "[Core20] lowerbound: " << lowerbound << " upperbound: " << upperbound << endl;
+	cout << "[Core18] lowerbound: " << lowerbound << " upperbound: " << upperbound << endl;
 
 	// this is an assembly code using asm keyword
 	// asm int 5; // generate intertupt 5, don't use this unless absolutely necessary
@@ -421,14 +402,14 @@ void ShowBasics() {
 
 void ShowPointer() {
 	*pi++;
-	cout << "[Core21] after performing *pi++, *pi is now:" << *pi << "at address: " << pi << end;
+	cout << "[Core19] after performing *pi++, *pi is now:" << *pi << "at address: " << pi << end;
 
 	// traversing an array using pointer
 	char* cp = carray; // point the char* pointer to the beginning of the carray, which is c[0]
 
 	// keep traversing until cp reaches a null value in the array,
 	//which will happen if the array is defined larger than the contents it contains
-	cout << "[Core22] traversing a char array using pointer cp, in the form of *cp++:" << endl;
+	cout << "[Core20] traversing a char array using pointer cp, in the form of *cp++:" << endl;
 	while (*cp != NULL)
 	{
 		cout << *cp++;
@@ -437,7 +418,7 @@ void ShowPointer() {
 
 	// traversing an array in an array-like fashion using pointer
 	cp = carray; // return cp to the head of the array
-	cout << "[Core23] traversing a char array using pointer cp, in the form of cp[i]:" << endl;
+	cout << "[Core21] traversing a char array using pointer cp, in the form of cp[i]:" << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		if (cp[i] == NULL)
@@ -469,6 +450,15 @@ void ShowPointer() {
 		// exit the program manually, will not go to any lines after this line
 		exit(12); //return code 12 when program ends
 	}
+
+	// using a pointer function
+	cout << "[Core22] num is originally: " << num;
+	neg(&num);
+	cout << " but after a pointer function that changes its value, it is now:" << num << end;
+
+	// using a pointer to fire a function
+	int (*fp)() = series; // a pointer to a function
+	cout << "[Core23] using a function pointer to fire the function: " << fp << end;
 
 }
 
@@ -859,13 +849,7 @@ void ShowFile() {
 
 }
 
-
-// the usage of const limits the user to changing the parameters
-int myclassbase::getplus(const int *a)
-{
-	// *a += 1; this doesn't work because a is uneditable due to the const keyword
-	return *a;
-}
+/*************************************** myclassbase functions and operator overloading ************************************/
 
 // this is a constructor that takes no parameters
 myclassbase::myclassbase() 
@@ -884,24 +868,12 @@ myclassbase::~myclassbase() { // constructor function for stack
 	cout << "myclassbase object destroyed"<<end;
 }
 
-
-/*********** overloading operators************************/
-
 myclassbase myclassbase::operator+(myclassbase myclass2)
 {
 	myclassbase temp;
 	temp.nsti = this->nsti + myclass2.nsti;
 	return temp;
 }
-
-// overwrites operator- for all myclassbase objects 
-myclassbase operator-(myclassbase myclass1,myclassbase myclass2)
-{
-	myclassbase temp;
-	temp.nsti = myclass1.nsti - myclass2.nsti;
-	return temp;
-}
-
 
 myclassbase myclassbase::operator()(int i, int j) // overload the () operator when using myclass(1,3) returns the overloaded operator
 {
@@ -927,6 +899,14 @@ void myclassbase::operator delete(void* po)
 	//free(po); // errors here, fix
 }
 
+// overwrites operator- for all myclassbase objects 
+myclassbase operator-(myclassbase myclass1,myclassbase myclass2)
+{
+	myclassbase temp;
+	temp.nsti = myclass1.nsti - myclass2.nsti;
+	return temp;
+}
+
 //myclassbase* myclassbase::operator->() { return this; } //overloading the -> operator
 
 // Display name and phone number. a custom output stream for the myclassbase class
@@ -945,9 +925,20 @@ istream& operator>>(istream& stream, myclassbase& myclass)
 	return stream;
 }
 
+// the usage of const limits the user to changing the parameters
+int myclassbase::getplus(const int* a)
+{
+	// *a += 1; this doesn't work because a is uneditable due to the const keyword
+	return *a;
+}
+
+// invoking the this pointer to access parameters within the class
+int myclassbase::getPV() {
+	// invoking the this pointer
+	return this->pvalue;
+}
+
 /******************************* function implementations ****************************************/
-
-
 
 // inline very small functions makes the program run faster, 
 // only inline the key functions to make the program faster
@@ -956,23 +947,17 @@ inline int sum(myclassbase x) // because sum is a friend of stack, it can direct
 	return x.pvalue;
 }
 
-// invoking the this pointer to access parameters within the class
-int myclassbase::getPV(){
-	// invoking the this pointer
-	return this->pvalue;
-} 
-
-void myclassbase::neg(int* i) // uses a pointer to perform an action that changes the value of the parameter passed
+void neg(int* i) // uses a pointer to perform an action that changes the value of the parameter passed
 {
 	*i = -*i;
 }
 
-double myclassbase::dfA(double d) // default parameters
+double dfA(double d) // default parameters
 {
 	return d;
 }
 
-template <class X> void myclassbase::swapargs(X& a, X& b)
+template <class X> void swapargs(X& a, X& b)
 {
 	X temp;
 
