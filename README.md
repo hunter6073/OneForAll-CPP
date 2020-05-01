@@ -1,4 +1,4 @@
-# SimpleLearnC
+# SimpleLearnCPP
  
 * Project: Relearn C++ in an hour
 
