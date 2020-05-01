@@ -1,7 +1,2 @@
-﻿  Core.cpp
-C:\Workspace\SimpleLearnC\SimpleLearnC\CPP_Project\Core.cpp(395,34): warning C4311: 'reinterpret_cast': pointer truncation from 'char *' to 'int'
-C:\Workspace\SimpleLearnC\SimpleLearnC\CPP_Project\Core.cpp(395,34): warning C4302: 'reinterpret_cast': truncation from 'char *' to 'int'
-C:\Workspace\SimpleLearnC\SimpleLearnC\CPP_Project\Core.cpp(368,15): warning C4101: 'bp': unreferenced local variable
-C:\Workspace\SimpleLearnC\SimpleLearnC\CPP_Project\Core.cpp(480,4): warning C4101: 'tmp': unreferenced local variable
-C:\Workspace\SimpleLearnC\SimpleLearnC\CPP_Project\Core.cpp(587,13): warning C4101: 'i': unreferenced local variable
+﻿  Threads.cpp
   CPP_Project.vcxproj -> C:\Workspace\SimpleLearnC\SimpleLearnC\x64\Debug\CPP_Project.exe

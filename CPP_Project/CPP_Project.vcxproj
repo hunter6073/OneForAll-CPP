@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="CPP_Project.cpp" />
+    <ClCompile Include="Threads.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="UtilLib.cpp" />
   </ItemGroup>
