@@ -16,3 +16,6 @@ int first = 0;
 
 // show the usage of c++ threads
 void ShowThreads();
+
+// show the usage of networking sockets
+void ShowNetworking();

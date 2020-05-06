@@ -44,10 +44,12 @@ int main()
 
 	// Search for all usage on threads in the 'Threads.cpp' script
 	ShowThreads();
+
+	// Search for all usage on networking in the 'Networking' script
+	ShowNetworking();
 	/*************************************
 	
 	* you're welcome to tweak this project as you like and correct my wrongs, additional features are very welcome!
-	* perhaps add a script to introduce sockets and web related issues?
 	* perhaps add a script to introduce linux based libraries?
 	* hope to see additions!
 	
