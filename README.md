@@ -15,6 +15,15 @@
 * 5. C++ Streams
 * 6. C++ File I/O
 
+* How to use this project:
+* 1. Simply download or clone this repository and open the CPP_Project.sln file using visual studio, if you're using linux system or other
+* IDEs on windows or mac, go into the CPP_Project folder and start assemble the cpp code for build and run. Also note that some libraries
+* used are on windows only such as <winsock>. Change these libraries accordingly to run the code(will be updated soon to fit all systems).
+* 2. Look into CPP_Project.cpp script, this is the entry code containing all other feature scripts.
+* 3. Run build on the script to see the output, you can match all instances of output with their implementation code via the unique index
+* for each output
+
+
 * Note: this project is created using visual studio 2019 on windows, you can import this project 
 * and run it to see the results. If you choose to use a different IDE or use 
 * linux system to compile this program, then please change the headers accordingly to avoid errors
