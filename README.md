@@ -1,45 +1,37 @@
-# SimpleLearnCPP
+# One For All - C++
  
-* Project: Relearn C++ in an hour
+* Project: One kit for all projects - c++ version
 
 * Author: Ted Wong(Hechun Wang)
 
-* Description: this project is to help programmers with former knowledge with C++ relearn the essentials 
-* in a short amount of time. There are currently around 1000 lines of code to cover the essentials.
-* the contents of this script covers the following:
+* Description: Ever find yourself ready to create a project and having to find the bits and pieces of code from the internet? And even then
+the code might not work due to configurations? Well fret no more, for here is the One For All project! In this file is a fully built c++ demo project with no extra coniguration needed. Simply download or clone this repository and open the CPP_Project.sln file using visual studio on windows. Run the script to see the output of all instances. IT WILL JUST WORK!
 
-* 1. C++ Core Basics
-* 2. C++ Pointers
-* 3. C++ Class
-* 4. C++ Exception
-* 5. C++ Streams
-* 6. C++ File I/O
+* Contents:
+    1. C++ Core Basics
+    2. C++ Pointers
+    3. C++ Class
+    4. C++ Exception
+    5. C++ Streams
+    6. C++ File I/O
+    7. C++ Threads
+    8. C++ socket programming in windows
 
-* How to use this project:
-* 1. Simply download or clone this repository and open the CPP_Project.sln file using visual studio, if you're using linux system or other
-* IDEs on windows or mac, go into the CPP_Project folder and start assemble the cpp code for build and run. Also note that some libraries
-* used are on windows only such as <winsock>. Change these libraries accordingly to run the code(will be updated soon to fit all systems).
-* 2. Look into CPP_Project.cpp script, this is the entry code containing all other feature scripts.
-* 3. Run build on the script to see the output, you can match all instances of output with their implementation code via the unique index
-* for each output
+* Simple Tips:
+    1. Run the program to make sure everything works. If there is an error then throw this project away, it's garbage unless it just works
+    2. The entrance code containing each part is the "CPP_Project.cpp" script, it's very simplified, so you can use it as an index.
+    3. Search for what you need in the respective script, you can do keyword search or simply scroll into the feature function to check everything
+    4. You can match the output with the original code via the unique output indexes
 
+* Note: this project is created using visual studio 2019 on windows. If you choose to use a different IDE or use linux system to compile this program, then please change the headers accordingly to avoid errors. Currently a suitable version for other operating systems is being developed underway.
 
-* Note: this project is created using visual studio 2019 on windows, you can import this project 
-* and run it to see the results. If you choose to use a different IDE or use 
-* linux system to compile this program, then please change the headers accordingly to avoid errors
-
-* Another note is all essential features are commented with keywords, so if you need to look at an example for
-* a specific feature, such as 'virtual functions' or 'polymorphism', perform keyword search for their examples
-* (This is not yet fully implemented)
-
-* The code are originally from "C++: The complete reference, fourth edition" by Herbert Schildt, all outputs are labelled with
-* unique index for code searching
+* The code are originally from "C++: The complete reference, fourth edition" by Herbert Schildt and some are from microsoft's winsocket documentation.
 
 * Progress:
-* Next step is to add in keywords for easy searching
+* Next step is to add in keywords for easy searching and perhaps try a python version? Or maybe java?
 
 
 
-Have fun with the script, hope it helps in any way possible!
-Best,
+Have fun with the script, hope it helps in any way possible.
+ONE FOR ALL, ALL FOR ONE!
 Ted
