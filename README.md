@@ -7,9 +7,13 @@
 ## Description: 
 Ever find yourself ready to create a project and having to find the bits and pieces of code from the internet? And even then
 the code might not work due to configurations? 
+
 Well fret no more, for here is the One For All project! 
+
 In this file is a fully built c++ demo project with no extra coniguration needed. 
+
 Simply download or clone this repository and open the CPP_Project.sln file using visual studio on windows. Run the script to see the output of all instances. 
+
 IT WILL JUST WORK!
 
 ## Contents:
