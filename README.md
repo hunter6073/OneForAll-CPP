@@ -39,6 +39,6 @@ The code are originally from "C++: The complete reference, fourth edition" by He
 * Progress:
 Next step is to add in keywords for easy searching and perhaps try a python version? Or maybe java?
 
-Have fun with the script, hope it helps in any way possible.
-ONE FOR ALL, ALL FOR ONE!
-Ted
+ Have fun with the script, hope it helps in any way possible.
+ ONE FOR ALL, ALL FOR ONE!
+ Ted
