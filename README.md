@@ -13,20 +13,20 @@ Simply download or clone this repository and open the CPP_Project.sln file using
 IT WILL JUST WORK!
 
 * Contents:
-    1. C++ Core Basics
-    2. C++ Pointers
-    3. C++ Class
-    4. C++ Exception
-    5. C++ Streams
-    6. C++ File I/O
-    7. C++ Threads
-    8. C++ socket programming in windows
+    - C++ Core Basics
+    - C++ Pointers
+    - C++ Class
+    - C++ Exception
+    - C++ Streams
+    - C++ File I/O
+    - C++ Threads
+    - C++ socket programming in windows
 
 * Simple Tips:
-    1. Run the program to make sure everything works. If there is an error then throw this project away, it's garbage unless it just works
-    2. The entrance code containing each part is the "CPP_Project.cpp" script, it's very simplified, so you can use it as an index.
-    3. Search for what you need in the respective script, you can do keyword search or simply scroll into the feature function to check everything
-    4. You can match the output with the original code via the unique output indexes
+    - Run the program to make sure everything works. If there is an error then throw this project away, it's garbage unless it just works
+    - The entrance code containing each part is the "CPP_Project.cpp" script, it's very simplified, so you can use it as an index.
+    - Search for what you need in the respective script, you can do keyword search or simply scroll into the feature function to check everything
+    - You can match the output with the original code via the unique output indexes
 
 * Note: 
 This project is created using visual studio 2019 on windows. 
